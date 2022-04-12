@@ -4,8 +4,8 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:1735/",
-      "sslPort": 44318
+      "applicationUrl": "http://localhost:1411",
+      "sslPort": 44300
     }
   },
   "profiles": {
@@ -17,14 +17,14 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Discount.API": {
+    "Ordering.API": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "http://localhost:5002",
+      "applicationUrl": "http://localhost:5005",
       "dotnetRunMessages": "true"
     },
     "Docker": {

@@ -80,8 +80,10 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - "CacheSettings:ConnectionString=basketdb:6379"
       - "GrpcSettings:DiscountUrl=http://discount.grpc" # important to add this line in order to invoke appsettings configuration in basket.api with the server name
+      - "EventBusSettings:HostAddress=amqp://guest:guest@rabbitmq:5672"# change name of the server @localhost with @rabbitmq from container name "rabbitmq"
     depends_on:
       - basketdb
+      - rabbitmq
     ports: 
       - "8001:80"
 
@@ -116,7 +118,9 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - "ConnectionStrings:OrderingConnectionString=Server=orderdb;Database=OrderDb;User Id=sa;Password=SwN12345678"
+      - "EventBusSettings:HostAddress=amqp://guest:guest@rabbitmq:5672"# change name of the server @localhost with @rabbitmq from container name "rabbitmq"
     depends_on:
-        - orderdb
+      - orderdb
+      - rabbitmq
     ports:
       - "8005:80"
